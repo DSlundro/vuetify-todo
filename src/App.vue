@@ -97,3 +97,8 @@
       }),
   }
 </script>
+
+<style land="scss">
+@import '@/assets/scss/app.scss';
+
+</style>
