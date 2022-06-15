@@ -2,9 +2,9 @@
   <div class="home">
 
     <v-text-field
-      v-model="newTaskTitle"
-      @click:append="addTask"
-      @keyup.enter="addTask"
+      v-model="$store.state.newTaskTitle"
+      @click:append="$store.commit('addTask', $store.state.newTaskTitle)"
+      @keyup.enter="$store.commit('addTask', $store.state.newTaskTitle)"
       class="pa-3"
       outlined
       label="Add Task"
@@ -14,7 +14,7 @@
     ></v-text-field>
 
     <v-list
-    v-if="tasks.length"
+    v-if="$store.state.tasks.length"
       flat
       class="pa-0"
     >
@@ -24,11 +24,11 @@
       >
         <!-- ========== Start List ========== -->
         <div
-        v-for="task in tasks"
+        v-for="task in $store.state.tasks"
         :key="task.id"
         >
           <v-list-item
-          @click="doneTask(task.id)"
+          @click="$store.commit('doneTask', task.id)"
           :class="{ 'blue lighten-5' : task.done}"
           >
             <template v-slot:default>
@@ -48,7 +48,7 @@
             <v-list-item-action>
               <v-btn icon>
                 <v-icon color="primary lighten-1"
-                @click.stop="deleteTask(task.id)"
+                @click.stop="$store.commit('deleteTask', task.id)"
                 >mdi-delete</v-icon>
               </v-btn>
             </v-list-item-action>
@@ -83,32 +83,6 @@
 
   export default {
     name: 'TodoView',
-    components: {
-    },
-    data(){
-      return{
-        newTaskTitle: '',
-        tasks: [],
-      }
-    },
-    methods:{
-      addTask(){
-        let newTask = {
-          id : Date.now(),
-          title: this.newTaskTitle,
-          done: false,
-        }
-        this.tasks.push(newTask);
-        this.newTaskTitle = '';
-      },
-      doneTask(id){
-        let task = this.tasks.filter(task => task.id === id)[0];
-        task.done = !task.done;
-      },
-      deleteTask(id){
-        this.tasks = this.tasks.filter(task => task.id !== id)
-      }
-    }
   }
 </script>
 
