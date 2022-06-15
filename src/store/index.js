@@ -6,24 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     newTaskTitle: '',
-    tasks:
-    [
-      {
-        id : 1,
-        title: 'Hello',
-        done: false,
-      },
-      {
-        id : 2,
-        title: 'Wake up',
-        done: false,
-      },
-      {
-        id : 3,
-        title: 'Breakfast',
-        done: false,
-      },
-    ]
+    tasks:[],
   },
   getters: {
   },
