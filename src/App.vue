@@ -51,7 +51,7 @@
       color="primary"
       dark
       shrink-on-scroll
-      src="https://cdn.pixabay.com/photo/2014/08/27/18/24/girl-429380_960_720.jpg"
+      src="https://blog.prezi.com/wp-content/uploads/2019/03/jason-leung-479251-unsplash.jpg"
       app
     >
       <template v-slot:img="{ props }">

@@ -1,6 +1,7 @@
 <template>
     <v-snackbar
         v-model="$store.state.snackbar.show"
+        :timeout="1000"
         >
         {{ $store.state.snackbar.text }}
 

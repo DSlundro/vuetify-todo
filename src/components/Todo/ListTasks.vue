@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import SingleTask from './SingleTask.vue'
+import SingleTask from './Task.vue'
 export default {
     components: { SingleTask },
     name: 'ListTask',
