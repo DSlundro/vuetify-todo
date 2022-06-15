@@ -82,12 +82,15 @@
 
     <v-main>
       <router-view></router-view>
+      <SnackBar />
     </v-main>
   </v-app>
 </template>
 
 <script>
+import SnackBar from './components/Global/SnackBar.vue'
   export default {
+  components: { SnackBar },
     data: () => ({ 
       drawer: null,
       items: [

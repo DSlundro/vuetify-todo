@@ -1,8 +1,8 @@
 <template>
     <v-text-field
         v-model="$store.state.newTaskTitle"
-        @click:append="$store.commit('addTask', $store.state.newTaskTitle)"
-        @keyup.enter="$store.commit('addTask', $store.state.newTaskTitle)"
+        @click:append="$store.dispatch('addTask', $store.state.newTaskTitle)"
+        @keyup.enter="$store.dispatch('addTask', $store.state.newTaskTitle)"
         class="pa-3"
         outlined
         label="Add Task"
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-    name: 'FieldAddTask'
+    name: 'FieldAddTask',
 }
 </script>
 
