@@ -14,6 +14,12 @@ export default new Vuex.Store({
     },
   },
   getters: {
+    tasksFiltered(state){
+      if(!state.search){
+        return state.tasks
+      }
+      return state.tasks.filter(task => task.title.includes(state.search));
+    },
   },
   mutations: {
     setSearch(state, value){

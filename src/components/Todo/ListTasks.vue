@@ -8,7 +8,7 @@
             active-class=""
         >
         <SingleTask 
-        v-for="task in $store.state.tasks" 
+        v-for="task in $store.getters.tasksFiltered" 
         :key="task.id"
         :task="task"
         />
