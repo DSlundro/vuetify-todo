@@ -65,18 +65,7 @@
       <v-app-bar-title>Vuetify Todo</v-app-bar-title>
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-
+      <SearchField />
     </v-app-bar>
     <!-- ========== End App Bar ========== -->
 
@@ -89,8 +78,9 @@
 
 <script>
 import SnackBar from './components/Global/SnackBar.vue'
+import SearchField from './components/Tools/SearchField.vue'
   export default {
-  components: { SnackBar },
+  components: { SnackBar, SearchField },
     data: () => ({ 
       drawer: null,
       items: [
