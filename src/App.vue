@@ -61,11 +61,17 @@
         ></v-img>
       </template>
       
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <v-app-bar-title>Vuetify Todo</v-app-bar-title>
-      <v-spacer></v-spacer>
+      <v-container class="pt-3">
+        <v-row>
+          <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+          <v-spacer></v-spacer>
+          <SearchField />
+        </v-row>
 
-      <SearchField />
+        <v-row>
+          <v-app-bar-title class="ml-4">Vuetify Todo</v-app-bar-title>
+        </v-row>
+      </v-container>
     </v-app-bar>
     <!-- ========== End App Bar ========== -->
 

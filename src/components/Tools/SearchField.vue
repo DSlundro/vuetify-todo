@@ -1,11 +1,12 @@
 <template>
     <v-text-field
-    v-model="search"
+    :value="$store.state.search"
+    @input="$store.commit('setSearch', $event)"
     @focus="searchClosed = false"
     @blur="searchClosed = true"
     filled
     class="expanding-search mt-1"
-    :class="{'closed' : searchClosed && !search}"
+    :class="{'closed' : searchClosed && !$store.state.search}"
     placeholder="Search"
     prepend-inner-icon="mdi-magnify"
     dense
@@ -17,7 +18,6 @@ export default {
     name: 'SearchField',
     data(){
         return{
-            search: null,
             searchClosed: true,
         }
     }

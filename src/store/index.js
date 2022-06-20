@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    search: null,
     newTaskTitle: '',
     tasks:[],
     snackbar: {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
   getters: {
   },
   mutations: {
+    setSearch(state, value){
+      state.search = value
+    },
     addTask(state, newTaskTitle){
       let newTask = {
         id : Date.now(),
