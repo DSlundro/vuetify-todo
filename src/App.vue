@@ -3,6 +3,7 @@
     <!-- ========== Start NavBar ========== -->
     <v-navigation-drawer 
     v-model="drawer"
+    :mobile-breakpoint="760"
     app>
     <!-- Img -->
       <v-img
@@ -70,7 +71,7 @@
         ></v-img>
       </template>
       
-      <v-container class="pt-3">
+      <v-container class=" header-container pt-3">
         <v-row>
           <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
           <v-spacer></v-spacer>
@@ -114,4 +115,7 @@ import SearchField from './components/Tools/SearchField.vue'
 <style land="scss">
 @import '@/assets/scss/app.scss';
 
+.header-container{
+  max-width: none !important;
+}
 </style>
