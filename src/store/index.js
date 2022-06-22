@@ -18,7 +18,7 @@ export default new Vuex.Store({
       if(!state.search){
         return state.tasks
       }
-      return state.tasks.filter(task => task.title.includes(state.search));
+      return state.tasks.filter(task => task.title.toLowerCase().includes(state.search.toLowerCase()));
     },
   },
   mutations: {
