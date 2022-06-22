@@ -4,22 +4,30 @@
     <v-navigation-drawer 
     v-model="drawer"
     app>
-    <!-- Title -->
-      <v-list-item>
-        <v-list-item-content>
-
-          <v-list-item-title class="text-h6">
-            Vuetify Todo
-          </v-list-item-title>
-
-          <v-list-item-subtitle>
-            Monitor your activities!
-          </v-list-item-subtitle>
-          
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
+    <!-- Img -->
+      <v-img
+        class="pa-4"
+        position="center"
+        height="160"
+        src="https://blog.prezi.com/wp-content/uploads/2019/03/jason-leung-479251-unsplash.jpg"
+        gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+      >
+        <v-avatar
+        size="70"
+        class="mb-2"
+        >
+          <img
+            src="@/assets/img/foto.jpg"
+            alt="Dragan"
+          >
+        </v-avatar>
+        <div class="white--text text-subtitle-1 font-weight-bold">
+          Dragan Savic
+        </div>
+        <div class="white--text text-subtitle-2">
+          @DSlundro
+        </div>
+      </v-img>
 
       <!-- NavBar list -->
       <v-list
@@ -53,6 +61,7 @@
       shrink-on-scroll
       src="https://blog.prezi.com/wp-content/uploads/2019/03/jason-leung-479251-unsplash.jpg"
       app
+      height="160"
     >
       <template v-slot:img="{ props }">
         <v-img
@@ -69,7 +78,11 @@
         </v-row>
 
         <v-row>
-          <v-app-bar-title class="ml-4">Vuetify Todo</v-app-bar-title>
+          <v-app-bar-title class="text-h4 ml-4">Vuetify Todo</v-app-bar-title>
+        </v-row>
+
+        <v-row>
+          <LiveDateTime />
         </v-row>
       </v-container>
     </v-app-bar>
@@ -84,11 +97,12 @@
 
 <script>
 import SnackBar from './components/Global/SnackBar.vue'
+import LiveDateTime from './components/Tools/LiveDateTime.vue'
 import SearchField from './components/Tools/SearchField.vue'
   export default {
-  components: { SnackBar, SearchField },
+  components: { SnackBar, SearchField, LiveDateTime },
     data: () => ({ 
-      drawer: null,
+      drawer: true,
       items: [
           { title: 'Todo', icon: 'mdi-format-list-checks', to: '/' },
           { title: 'About', icon: 'mdi-information-outline', to: '/about' },
