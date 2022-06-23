@@ -79,7 +79,9 @@
         </v-row>
 
         <v-row>
-          <v-app-bar-title class="text-h4 ml-4">Vuetify Todo</v-app-bar-title>
+          <v-app-bar-title class="text-h4 ml-4">
+            {{$store.state.appTitle}}
+          </v-app-bar-title>
         </v-row>
 
         <v-row>
@@ -117,5 +119,9 @@ import SearchField from './components/Tools/SearchField.vue'
 
 .header-container{
   max-width: none !important;
+}
+
+.v-main__wrap{
+  min-height: 350px !important;
 }
 </style>
